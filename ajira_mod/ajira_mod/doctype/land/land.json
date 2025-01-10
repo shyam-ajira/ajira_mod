@@ -1,0 +1,300 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-10 11:32:24.899211",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "land_owner",
+  "land_owner_name",
+  "land_details_section",
+  "napi_no",
+  "plot_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "land_details_section",
+   "fieldtype": "Section Break",
+   "label": "Land Details"
+  },
+  {
+   "fieldname": "napi_no",
+   "fieldtype": "Int",
+   "label": "Napi No."
+  },
+  {
+   "fieldname": "plot_no",
+   "fieldtype": "Int",
+   "label": "Plot No."
+  },
+  {
+   "fieldname": "land_owner",
+   "fieldtype": "Link",
+   "label": "Land Owner",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "land_owner_name",
+   "fieldtype": "Data",
+   "label": "Land Owner Name",
+   "read_only": 1
+  },{
+   "fieldname": "land_details_section",
+   "label": "Land Details",
+   "fieldtype": "Tab Break",
+   "insert_after": "blog_subscriber",
+   "permlevel": 0
+},
+{
+   "fieldname": "land_section",
+   "label": "Land Location",
+   "fieldtype": "Section Break",
+   "insert_after": "land_details_section",
+   "permlevel": 0
+},
+{
+   "fieldname": "district",
+   "label": "District",
+   "fieldtype": "Data",
+   "mandatory": 1,
+   "insert_after": "land_section",
+   "in_list_view": 1,
+   "permlevel": 0
+},
+{
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break",
+   "insert_after": "district",
+   "permlevel": 0
+},
+{
+   "fieldname": "municipality",
+   "label": "Municipality",
+   "fieldtype": "Data",
+   "mandatory": 1,
+   "insert_after": "col_break_1",
+   "in_list_view": 1,
+   "permlevel": 0
+},
+{
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break",
+   "insert_after": "municipality",
+   "permlevel": 0
+},
+{
+   "fieldname": "ward",
+   "label": "Ward",
+   "fieldtype": "Int",
+   "mandatory": 1,
+   "insert_after": "col_break_2",
+   "in_list_view": 1,
+   "permlevel": 0
+},
+{
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break",
+   "insert_after": "ward",
+   "permlevel": 0
+},
+{
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break",
+   "insert_after": "col_break_3",
+   "permlevel": 0
+},
+{
+   "fieldname": "area_type_section",
+   "label": "Area Type Selection",
+   "fieldtype": "Section Break",
+   "insert_after": "col_break_4",
+   "permlevel": 0
+},
+{
+   "fieldname": "unit_type",
+   "label": "Select Area Type",
+   "fieldtype": "Select",
+   "options": "Hilly Area\nTerai Area",
+   "mandatory": 1,
+   "insert_after": "area_type_section",
+   "in_list_view": 1
+},
+{
+   "fieldname": "col_break_5",
+   "fieldtype": "Column Break",
+   "insert_after": "unit_type",
+   "permlevel": 0
+},
+{
+   "fieldname": "col_break_6",
+   "fieldtype": "Column Break",
+   "insert_after": "col_break_5",
+   "permlevel": 0
+},
+{
+   "fieldname": "rapd_section",
+   "label": "R-A-P-D",
+   "fieldtype": "Section Break",
+   "insert_after": "col_break_6",
+   "depends_on": "eval:doc.unit_type == 'Hilly Area'"
+},
+{
+   "fieldname": "ropani",
+   "label": "Ropani",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Hilly Area'",
+   "insert_after": "rapd_section"
+},
+{
+   "fieldname": "col_break_rapd_1",
+   "fieldtype": "Column Break",
+   "insert_after": "ropani"
+},
+{
+   "fieldname": "aana",
+   "label": "Aana",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Hilly Area'",
+   "insert_after": "col_break_rapd_1"
+},
+{
+   "fieldname": "col_break_rapd_2",
+   "fieldtype": "Column Break",
+   "insert_after": "aana"
+},
+{
+   "fieldname": "paisa",
+   "label": "Paisa",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Hilly Area'",
+   "insert_after": "col_break_rapd_2"
+},
+{
+   "fieldname": "col_break_rapd_3",
+   "fieldtype": "Column Break",
+   "insert_after": "paisa"
+},
+{
+   "fieldname": "daam",
+   "label": "Daam",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Hilly Area'",
+   "insert_after": "col_break_rapd_3"
+},
+{
+   "fieldname": "col_break_rapd_4",
+   "fieldtype": "Column Break",
+   "insert_after": "daam"
+},
+{
+   "fieldname": "col_break_rapd_5",
+   "fieldtype": "Column Break",
+   "insert_after": "col_break_rapd_4"
+},
+{
+   "fieldname": "bkd_section",
+   "label": "B-K-D",
+   "fieldtype": "Section Break",
+   "insert_after": "col_break_rapd_5",
+   "depends_on": "eval:doc.unit_type == 'Terai Area'"
+},
+{
+   "fieldname": "bigha",
+   "label": "Bigha",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Terai Area'",
+   "insert_after": "bkd_section"
+},
+{
+   "fieldname": "col_break_bkd_1",
+   "fieldtype": "Column Break",
+   "insert_after": "bigha"
+},
+{
+   "fieldname": "kattha",
+   "label": "Kattha",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Terai Area'",
+   "insert_after": "col_break_bkd_1"
+},
+{
+   "fieldname": "col_break_bkd_2",
+   "fieldtype": "Column Break",
+   "insert_after": "kattha"
+},
+{
+   "fieldname": "dhur",
+   "label": "Dhur",
+   "fieldtype": "Float",
+   "depends_on": "eval:doc.unit_type == 'Terai Area'",
+   "insert_after": "col_break_bkd_2"
+},
+{
+   "fieldname": "col_break_bkd_3",
+   "fieldtype": "Column Break",
+   "insert_after": "dhur"
+},
+{
+   "fieldname": "col_break_bkd_4",
+   "fieldtype": "Column Break",
+   "insert_after": "col_break_bkd_3"
+},
+{
+   "fieldname": "square_feet_meter_section",
+   "label": "Square Feet and Meter",
+   "fieldtype": "Section Break",
+   "insert_after": "col_break_bkd_4"
+},
+{
+   "fieldname": "sq_feet",
+   "label": "Square Feet",
+   "fieldtype": "Float",
+   "insert_after": "square_feet_meter_section"
+},
+{
+   "fieldname": "col_break_sq_1",
+   "fieldtype": "Column Break",
+   "insert_after": "sq_feet"
+},
+{
+   "fieldname": "sq_mtr",
+   "label": "Square Meter",
+   "fieldtype": "Float",
+   "insert_after": "col_break_sq_1"
+},
+{
+   "fieldname": "col_break_sq_2",
+   "fieldtype": "Column Break",
+   "insert_after": "sq_mtr"
+},
+{
+   "fieldname": "col_break_sq_3",
+   "fieldtype": "Column Break",
+   "insert_after": "col_break_sq_2"
+}
+
+],
+ "index_web_pages_for_search": 1,
+ "modified": "2025-01-10 11:42:41.331522",
+ "modified_by": "Administrator",
+ "module": "Ajira Mod",
+ "name": "Land",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
