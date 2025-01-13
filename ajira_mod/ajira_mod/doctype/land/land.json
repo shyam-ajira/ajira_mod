@@ -5,10 +5,14 @@
    "doctype": "DocType",
    "engine": "InnoDB",
    "field_order": [
+     "land_ownership_section",
      "land_owner",
+     "col_break_land_owner",
      "land_owner_name",
+     "col_break_owner_name",
+     "col_break_owner_name_1",
      "land_details_section",
-     "napi_no",
+     "napi_sheet_no",
      "col_break_napi_1",
      "plot_no",
      "col_break_plot",
@@ -51,6 +55,11 @@
      "col_break_sq_3"
    ],
    "fields": [
+      {
+         "fieldname": "land_ownership_section",
+         "fieldtype": "Section Break",
+         "label": "Land Ownership"  
+      },
      {
        "fieldname": "land_owner",
        "fieldtype": "Link",
@@ -58,11 +67,27 @@
        "options": "Lead"
      },
      {
+      "fieldname": "col_break_land_owner",
+      "fieldtype": "Column Break",
+      "insert_after": "land_owner"
+    },
+     {
        "fieldname": "land_owner_name",
        "fieldtype": "Data",
        "label": "Land Owner Name",
-       "read_only": 1
+       "read_only": 1,
+       "insert_after": "land_owner"
      },
+     {
+      "fieldname": "col_break_owner_name",
+      "fieldtype": "Column Break",
+      "insert_after": "land_owner_name"
+    },     
+    {
+      "fieldname": "col_break_owner_name_1",
+      "fieldtype": "Column Break",
+      "insert_after": "col_break_owner_name"
+    },
      {
        "fieldname": "land_details_section",
        "fieldtype": "Section Break",
@@ -71,15 +96,15 @@
 
      },
      {
-       "fieldname": "napi_no",
+       "fieldname": "napi_sheet_no",
        "fieldtype": "Int",
-       "label": "Napi No.",
+       "label": "Napi Sheet No.",
        "insert_after": "land_details_section"
      },
      {
       "fieldname": "col_break_napi_1",
       "fieldtype": "Column Break",
-      "insert_after": "napi_no"
+      "insert_after": "napi_sheet_no"
     },
      {
        "fieldname": "plot_no",

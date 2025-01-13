@@ -1,0 +1,11 @@
+[
+    {
+        "doctype": "Custom Field",
+        "dt": "Quotation",
+        "fieldname": "land",
+        "label": "Land Detail",
+        "fieldtype": "Link",
+        "options": "Land",
+        "insert_after": "valid_till"
+    }
+]

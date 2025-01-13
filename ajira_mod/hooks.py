@@ -242,3 +242,9 @@ app_license = "agpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Custom Field",
+        "filters": [["name", "like", "Quotation%"]]
+    }
+]
