@@ -1,20 +1,25 @@
 {
    "actions": [],
+   "naming_rule": "By Fieldname",
+   "autoname": "field:land_owner_name",
    "allow_rename": 1,
    "creation": "2025-01-10 11:32:24.899211",
    "doctype": "DocType",
    "engine": "InnoDB",
    "field_order": [
-     "land_ownership_section",
-     "land_owner",
-     "col_break_land_owner",
-     "land_owner_name",
-     "col_break_owner_name",
-     "col_break_owner_name_1",
+    "land_ownership_section",
+    "focal_person",
+    "focal_person_name",
+    "col_break_land_owner",
+    "land_owner",
+    "col_break_owner_name",
+    "land_owner_name",
+    "relation_with_fp",
      "land_details_section",
      "napi_sheet_no",
      "col_break_napi_1",
      "plot_no",
+     "plot_no_description",
      "col_break_plot",
      "col_break_plot_1",
      "land_section",
@@ -56,43 +61,58 @@
    ],
    "fields": [
       {
-         "fieldname": "land_ownership_section",
-         "fieldtype": "Section Break",
-         "label": "Land Ownership"  
+          "fieldname": "land_ownership_section",
+          "fieldtype": "Section Break",
+          "label": "Land Ownership"
       },
-     {
-       "fieldname": "land_owner",
-       "fieldtype": "Link",
-       "label": "Land Owner",
-       "options": "Lead"
-     },
-     {
-      "fieldname": "col_break_land_owner",
-      "fieldtype": "Column Break",
-      "insert_after": "land_owner"
-    },
-     {
-       "fieldname": "land_owner_name",
-       "fieldtype": "Data",
-       "label": "Land Owner Name",
-       "read_only": 1,
-       "insert_after": "land_owner"
-     },
-     {
-      "fieldname": "col_break_owner_name",
-      "fieldtype": "Column Break",
-      "insert_after": "land_owner_name"
-    },     
-    {
-      "fieldname": "col_break_owner_name_1",
-      "fieldtype": "Column Break",
-      "insert_after": "col_break_owner_name"
-    },
-     {
+      {
+          "fieldname": "focal_person",
+          "fieldtype": "Link",
+          "label": "Focal Person",
+          "options": "Lead",
+          "insert_after": "land_ownership_section"
+      },
+      {
+        "fieldname": "focal_person_name",
+        "fieldtype": "Data",
+        "label": "Focal Person Name",
+        "insert_after": "land_owner_name"
+      },
+      {
+          "fieldname": "col_break_land_owner",
+          "fieldtype": "Column Break",
+          "insert_after": "focal_person"
+      },
+      {
+          "fieldname": "land_owner",
+          "fieldtype": "Select",
+          "label": "Land Owner",
+          "options": "Self\nRelative",
+          "insert_after": "col_break_land_owner"
+      },
+      {
+          "fieldname": "col_break_owner_name",
+          "fieldtype": "Column Break",
+          "insert_after": "land_owner"
+      },
+      {
+          "fieldname": "land_owner_name",
+          "fieldtype": "Data",
+          "label": "Land Owner Name",
+          "insert_after": "col_break_owner_name"
+      },
+      {
+          "fieldname": "relation_with_fp",
+          "fieldtype": "Select",
+          "label": "Relation with Focal Person",
+          "options": "None\nHusband\nWife\nFather\nMother\nSon\nDaughter",
+          "insert_after": "land_owner_name"
+      },
+      {
        "fieldname": "land_details_section",
        "fieldtype": "Section Break",
        "label": "Land Details",
-       "insert_after": "land_owner_name"
+       "insert_after": "land_owner"
 
      },
      {
@@ -106,15 +126,22 @@
       "fieldtype": "Column Break",
       "insert_after": "napi_sheet_no"
     },
-     {
-       "fieldname": "plot_no",
-       "fieldtype": "Int",
-       "label": "Plot No."
-     },
-     {
+    {
+      "fieldname": "plot_no",
+      "fieldtype": "Int",
+      "label": "Plot No."
+    },
+    {
+      "fieldname": "plot_no_description",
+      "fieldtype": "HTML",
+      "options": "<div style='color: gray;'>Separate multiple plot numbers by comma</div>",
+      "depends_on": "eval:doc.plot_no",
+      "read_only": 1
+    },
+    {
       "fieldname": "col_break_plot",
       "fieldtype": "Column Break",
-      "insert_after": "plot_no"
+      "insert_after": "plot_no_description"
     },     
     {
       "fieldname": "col_break_plot_1",

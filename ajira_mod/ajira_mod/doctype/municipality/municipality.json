@@ -6,6 +6,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "district",
+  "column_break_lssc",
   "municipality_name",
   "active"
  ],
@@ -20,11 +22,21 @@
    "fieldname": "active",
    "fieldtype": "Check",
    "label": "Active"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District"
+  },
+  {
+   "fieldname": "column_break_lssc",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-09 14:51:42.454317",
+ "modified": "2025-01-15 13:43:44.348432",
  "modified_by": "Administrator",
  "module": "Ajira Mod",
  "name": "Municipality",
