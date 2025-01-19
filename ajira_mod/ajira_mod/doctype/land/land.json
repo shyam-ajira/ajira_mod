@@ -76,18 +76,18 @@
         "fieldname": "focal_person_name",
         "fieldtype": "Data",
         "label": "Focal Person Name",
-        "insert_after": "land_owner_name"
+        "insert_after": "focal_person"
       },
       {
           "fieldname": "col_break_land_owner",
           "fieldtype": "Column Break",
-          "insert_after": "focal_person"
+          "insert_after": "focal_person_name"
       },
       {
           "fieldname": "land_owner",
           "fieldtype": "Select",
           "label": "Land Owner",
-          "options": "Self\nRelative",
+          "options": "\nSelf\nRelative",
           "insert_after": "col_break_land_owner"
       },
       {
@@ -96,17 +96,21 @@
           "insert_after": "land_owner"
       },
       {
-          "fieldname": "land_owner_name",
-          "fieldtype": "Data",
-          "label": "Land Owner Name",
-          "insert_after": "col_break_owner_name"
+        "fieldname": "land_owner_name",
+        "fieldtype": "Data",
+        "label": "Land Owner Name",
+        "insert_after": "col_break_owner_name",
+        "read_only": 0,  
+        "hidden": 1
+
       },
       {
           "fieldname": "relation_with_fp",
           "fieldtype": "Select",
           "label": "Relation with Focal Person",
-          "options": "None\nHusband\nWife\nFather\nMother\nSon\nDaughter",
-          "insert_after": "land_owner_name"
+          "options": "\nHusband\nWife\nFather\nMother\nSon\nDaughter",
+          "insert_after": "land_owner_name",
+          "hidden": 1 
       },
       {
        "fieldname": "land_details_section",
