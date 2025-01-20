@@ -1,7 +1,14 @@
 {
    "actions": [],
-   "naming_rule": "By Fieldname",
-   "autoname": "field:land_owner_name",
+   "naming_rule": "Expression",
+   "autoname": "format:Land-{land_owner_name}-.YY.-{###}",
+   "links": [
+    {
+      "link_doctype": "Land",
+      "link_fieldname": "focal_person",
+      "group": "Land Details"
+    }
+  ], 
    "allow_rename": 1,
    "creation": "2025-01-10 11:32:24.899211",
    "doctype": "DocType",
