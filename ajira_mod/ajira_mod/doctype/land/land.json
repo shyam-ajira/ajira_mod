@@ -4,7 +4,7 @@
   "autoname": "format:Land-{land_owner_name}-{YY}-{###}",
   "links": [
     {
-      "link_doctype": "Land",
+      "link_doctype": "Lead",
       "link_fieldname": "focal_person",
       "group": "Land Details"
     }
