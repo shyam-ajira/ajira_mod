@@ -138,8 +138,7 @@
     {
       "fieldname": "plot_no_description",
       "fieldtype": "HTML",
-      "options": "<div style='color: gray;'>Separate multiple plot numbers by comma</div>",
-      "depends_on": "eval:doc.plot_no",
+      "options": "<div style='color: gray;'>Separate Multiple Plot Numbers By Comma</div>",
       "read_only": 1
     },
     {

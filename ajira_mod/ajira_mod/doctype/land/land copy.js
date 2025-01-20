@@ -33,14 +33,6 @@ frappe.ui.form.on('Land', {
 
         // Trigger the calculation when the form is refreshed
         calculate_land_area(frm);
-
-        // Initially hide Municipality and Ward fields if District is not selected
-        if (!frm.doc.district) {
-            frm.set_df_property('municipality', 'hidden', true);
-            frm.set_df_property('ward', 'hidden', true);
-        } else if (!frm.doc.municipality) {
-            frm.set_df_property('ward', 'hidden', true);
-        }
     },
 
     // When the "land_owner" field is changed
@@ -51,9 +43,8 @@ frappe.ui.form.on('Land', {
     // When the "district" field is changed
     district(frm) {
         if (frm.doc.district) {
-            // Clear the Municipality and Ward fields
+            // Clear the Municipality field
             frm.set_value('municipality', null);
-            frm.set_value('ward', null);
 
             // Set a dynamic query on the Municipality field based on selected District
             frm.set_query('municipality', function() {
@@ -64,30 +55,13 @@ frappe.ui.form.on('Land', {
                     }
                 };
             });
-
-            // Show Municipality field
-            frm.set_df_property('municipality', 'hidden', false);
-
-            // Hide Ward field until Municipality is selected
-            frm.set_df_property('ward', 'hidden', true);
         } else {
-            // Clear and hide Municipality and Ward fields if District is not selected
+            // Clear the Municipality field and remove query filter
             frm.set_value('municipality', null);
-            frm.set_value('ward', null);
-            frm.set_df_property('municipality', 'hidden', true);
-            frm.set_df_property('ward', 'hidden', true);
-        }
-    },
-
-    // When the "municipality" field is changed
-    municipality(frm) {
-        if (frm.doc.municipality) {
-            // Show the Ward field
-            frm.set_df_property('ward', 'hidden', false);
-        } else {
-            // Clear and hide the Ward field if Municipality is not selected
-            frm.set_value('ward', null);
-            frm.set_df_property('ward', 'hidden', true);
+            frm.set_query('municipality', function() {
+                return {};
+            });
+            console.warn("District is not selected. Municipality dropdown cleared.");
         }
     },
 
