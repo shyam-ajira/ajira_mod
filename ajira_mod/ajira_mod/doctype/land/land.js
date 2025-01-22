@@ -43,6 +43,27 @@ frappe.ui.form.on('Land', {
         }
     },
 
+    // When the "focal_person" field is changed
+    focal_person(frm) {
+        // Fetch the lead_name from the "Lead" doctype and update "land_owner_name"
+        if (frm.doc.focal_person) {
+            frappe.db.get_value('Lead', frm.doc.focal_person, 'lead_name', function(value) {
+                if (value) {
+                    frm.set_value('focal_person_name', value.lead_name);
+                    if (frm.doc.land_owner === 'Self') {
+                        frm.set_value('land_owner_name', value.lead_name);
+                    }
+                }
+            });
+        } else {
+            // Clear the focal_person_name and land_owner_name if focal_person is cleared
+            frm.set_value('focal_person_name', null);
+            if (frm.doc.land_owner === 'Self') {
+                frm.set_value('land_owner_name', null);
+            }
+        }
+    },
+
     // When the "land_owner" field is changed
     land_owner(frm) {
         toggle_fields(frm);
@@ -194,50 +215,40 @@ frappe.ui.form.on('Land', {
 
 // Function to calculate total area from B-K-D fields
 function calculate_land_area(frm) {
-    // Conversion factors
-    const kattha_to_sqft = 3645;              // 1 Kattha = 3645 Square Feet
-    const bigha_to_sqft = kattha_to_sqft * 20; // 1 Bigha = 20 Kattha
-    const dhur_to_sqft = kattha_to_sqft / 20;  // 1 Dhur = 1/20 Kattha
-    const sqft_to_sqm = 0.092903;             // Conversion factor for square feet to square meter
+    const kattha_to_sqft = 3645;
+    const bigha_to_sqft = kattha_to_sqft * 20;
+    const dhur_to_sqft = kattha_to_sqft / 20;
+    const sqft_to_sqm = 0.092903;
 
-    // Input values
     let bigha = frm.doc.bigha || 0;
     let kattha = frm.doc.kattha || 0;
     let dhur = frm.doc.dhur || 0;
 
-    // Calculate total square feet
     let total_sqft = (bigha * bigha_to_sqft) +
                      (kattha * kattha_to_sqft) +
                      (dhur * dhur_to_sqft);
 
-    // Calculate square meter
     let total_sqm = total_sqft * sqft_to_sqm;
 
-    // Update fields in the form
     frm.set_value('sq_feet', total_sqft);
     frm.set_value('sq_mtr', total_sqm.toFixed(2));
 }
 
 // Function to calculate reverse conversions from square feet and square meter
 function calculate_reverse(frm) {
-    // Conversion factors
-    const kattha_to_sqft = 3645;              // 1 Kattha = 3645 Square Feet
-    const bigha_to_sqft = kattha_to_sqft * 20; // 1 Bigha = 20 Kattha
-    const dhur_to_sqft = kattha_to_sqft / 20;  // 1 Dhur = 1/20 Kattha
-    const sqft_to_sqm = 0.092903;             // Conversion factor for square feet to square meter
+    const kattha_to_sqft = 3645;
+    const bigha_to_sqft = kattha_to_sqft * 20;
+    const dhur_to_sqft = kattha_to_sqft / 20;
+    const sqft_to_sqm = 0.092903;
 
-    // Input values
     let sqft = frm.doc.sq_feet || 0;
     let sqm = frm.doc.sq_mtr || 0;
 
-    // If square feet are entered, calculate reverse
     if (sqft > 0) {
         let total_sqft = sqft;
 
-        // Calculate square meter
         let total_sqm = total_sqft * sqft_to_sqm;
 
-        // Convert square feet to bigha, kattha, and dhur
         let bigha = Math.floor(total_sqft / bigha_to_sqft);
         total_sqft -= bigha * bigha_to_sqft;
 
@@ -246,20 +257,15 @@ function calculate_reverse(frm) {
 
         let dhur = total_sqft / dhur_to_sqft;
 
-        // Update fields
         frm.set_value('sq_mtr', total_sqm.toFixed(2));
         frm.set_value('bigha', bigha);
         frm.set_value('kattha', kattha);
         frm.set_value('dhur', dhur.toFixed(2));
-    }
-    // If square meter is entered, calculate reverse
-    else if (sqm > 0) {
+    } else if (sqm > 0) {
         let total_sqm = sqm;
 
-        // Convert square meter to square feet
         let total_sqft = total_sqm / sqft_to_sqm;
 
-        // Convert square feet to bigha, kattha, and dhur
         let bigha = Math.floor(total_sqft / bigha_to_sqft);
         total_sqft -= bigha * bigha_to_sqft;
 
@@ -268,7 +274,6 @@ function calculate_reverse(frm) {
 
         let dhur = total_sqft / dhur_to_sqft;
 
-        // Update fields
         frm.set_value('sq_feet', total_sqft);
         frm.set_value('bigha', bigha);
         frm.set_value('kattha', kattha);
@@ -279,7 +284,6 @@ function calculate_reverse(frm) {
 // Function to toggle the visibility of fields based on land_owner value
 function toggle_fields(frm) {
     if (frm.doc.land_owner === 'Self') {
-        // Hide the focal person fields and set them to null
         frm.set_value('land_owner_name', frm.doc.focal_person_name);
         frm.set_df_property('focal_person_name', 'hidden', true);
         frm.set_df_property('land_owner_name', 'hidden', false);

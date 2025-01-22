@@ -2,13 +2,6 @@
   "actions": [],
   "naming_rule": "Expression",
   "autoname": "format:Land-{land_owner_name}-{YY}-{###}",
-  "links": [
-    {
-      "link_doctype": "Lead",
-      "link_fieldname": "focal_person",
-      "group": "Land Details"
-    }
-  ],
   "allow_rename": 1,
   "creation": "2025-01-10 11:32:24.899211",
   "doctype": "DocType",
@@ -83,7 +76,8 @@
       "fieldname": "focal_person_name",
       "fieldtype": "Data",
       "label": "Focal Person Name",
-      "insert_after": "focal_person"
+      "insert_after": "focal_person",
+      "read_only": 1
     },
     {
       "fieldname": "col_break_land_owner",
@@ -94,7 +88,7 @@
       "fieldname": "land_owner",
       "fieldtype": "Select",
       "label": "Land Owner",
-      "options": "\nSelf\nRelative",
+      "options": "Self\nRelative",
       "insert_after": "col_break_land_owner"
     },
     {
@@ -113,7 +107,7 @@
     {
       "fieldname": "relation_with_fp",
       "fieldtype": "Select",
-      "label": "Relation with Focal Person",
+      "label": "Land Owner is Focal Person's",
       "options": "\nHusband\nWife\nFather\nMother\nSon\nDaughter",
       "insert_after": "land_owner_name",
       "hidden": 1

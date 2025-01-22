@@ -245,3 +245,8 @@ app_license = "agpl-3.0"
 after_install = "ajira_mod.custom.custom_fields.create_custom_field"
 
 
+# hooks.py
+
+override_doctype_dashboards = {
+    "Lead": "ajira_mod.custom.lead.lead_dashboard.get_data"
+}
