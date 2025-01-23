@@ -31,10 +31,6 @@ frappe.ui.form.on('Land', {
             frm.set_df_property('bkd_section', 'hidden', 1);
         }
 
-        // Trigger the calculation when the form is refreshed
-        // calculate_area_from_bkd(frm);
-        // calculate_area_from_rapd(frm);
-
         // Initially hide Municipality and Ward fields if District is not selected
         if (!frm.doc.district) {
             frm.set_df_property('municipality', 'hidden', true);
@@ -239,52 +235,52 @@ function calculate_area_from_bkd(frm) {
 }
 
 // Function to calculate reverse conversions from square feet and square meter
-function calculate_reverse(frm) {
-    const kattha_to_sqft = 3645;
-    const bigha_to_sqft = kattha_to_sqft * 20;
-    const dhur_to_sqft = kattha_to_sqft / 20;
-    const sqft_to_sqm = 0.092903;
+// function calculate_reverse(frm) {
+//     const kattha_to_sqft = 3645;
+//     const bigha_to_sqft = kattha_to_sqft * 20;
+//     const dhur_to_sqft = kattha_to_sqft / 20;
+//     const sqft_to_sqm = 0.092903;
 
-    let sqft = frm.doc.sq_feet || 0;
-    let sqm = frm.doc.sq_mtr || 0;
+//     let sqft = frm.doc.sq_feet || 0;
+//     let sqm = frm.doc.sq_mtr || 0;
 
-    if (sqft > 0) {
-        let total_sqft = sqft;
+//     if (sqft > 0) {
+//         let total_sqft = sqft;
 
-        let total_sqm = total_sqft * sqft_to_sqm;
+//         let total_sqm = total_sqft * sqft_to_sqm;
 
-        let bigha = Math.floor(total_sqft / bigha_to_sqft);
-        total_sqft -= bigha * bigha_to_sqft;
+//         let bigha = Math.floor(total_sqft / bigha_to_sqft);
+//         total_sqft -= bigha * bigha_to_sqft;
 
-        let kattha = Math.floor(total_sqft / kattha_to_sqft);
-        total_sqft -= kattha * kattha_to_sqft;
+//         let kattha = Math.floor(total_sqft / kattha_to_sqft);
+//         total_sqft -= kattha * kattha_to_sqft;
 
-        let dhur = total_sqft / dhur_to_sqft;
+//         let dhur = total_sqft / dhur_to_sqft;
 
-        frm.set_value('sq_mtr', total_sqm.toFixed(2));
-        frm.set_value('bigha', bigha);
-        frm.set_value('kattha', kattha);
-        frm.set_value('dhur', dhur.toFixed(2));
-    } 
-    // else if (sqm > 0) {
-    //     let total_sqm = sqm;
+//         frm.set_value('sq_mtr', total_sqm.toFixed(2));
+//         frm.set_value('bigha', bigha);
+//         frm.set_value('kattha', kattha);
+//         frm.set_value('dhur', dhur.toFixed(2));
+//     } 
+//     else if (sqm > 0) {
+//         let total_sqm = sqm;
 
-    //     let total_sqft = total_sqm / sqft_to_sqm;
+//         let total_sqft = total_sqm / sqft_to_sqm;
 
-    //     let bigha = Math.floor(total_sqft / bigha_to_sqft);
-    //     total_sqft -= bigha * bigha_to_sqft;
+//         let bigha = Math.floor(total_sqft / bigha_to_sqft);
+//         total_sqft -= bigha * bigha_to_sqft;
 
-    //     let kattha = Math.floor(total_sqft / kattha_to_sqft);
-    //     total_sqft -= kattha * kattha_to_sqft;
+//         let kattha = Math.floor(total_sqft / kattha_to_sqft);
+//         total_sqft -= kattha * kattha_to_sqft;
 
-    //     let dhur = total_sqft / dhur_to_sqft;
+//         let dhur = total_sqft / dhur_to_sqft;
 
-    //     frm.set_value('sq_feet', total_sqft);
-    //     frm.set_value('bigha', bigha);
-    //     frm.set_value('kattha', kattha);
-    //     frm.set_value('dhur', dhur.toFixed(2));
-    // }
-}
+//         frm.set_value('sq_feet', total_sqft);
+//         frm.set_value('bigha', bigha);
+//         frm.set_value('kattha', kattha);
+//         frm.set_value('dhur', dhur.toFixed(2));
+//     }
+// }
 
 // Function to toggle the visibility of fields based on land_owner value
 function toggle_fields(frm) {
