@@ -242,7 +242,8 @@ app_license = "agpl-3.0"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
-after_install = "ajira_mod.custom.custom_fields.create_custom_field"
+after_install = "ajira_mod.install.after_install"
+before_uninstall = "ajira_mod.uninstall.before_uninstall"
 
 
 # hooks.py
