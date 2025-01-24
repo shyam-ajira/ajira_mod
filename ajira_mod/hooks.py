@@ -243,11 +243,20 @@ app_license = "agpl-3.0"
 # }
 
 after_install = "ajira_mod.install.after_install"
+
 before_uninstall = "ajira_mod.uninstall.before_uninstall"
 
-
-# hooks.py
 
 override_doctype_dashboards = {
     "Lead": "ajira_mod.custom.lead.lead_dashboard.get_data"
 }
+
+
+fixtures = [
+    {
+        "doctype": "District"
+    },
+    {
+        "doctype": "Municipality"
+    }
+]

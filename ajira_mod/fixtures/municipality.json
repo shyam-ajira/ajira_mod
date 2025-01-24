@@ -1,0 +1,299 @@
+[
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:18:22.991642",
+  "municipality_name": "Kathmandu Metropolitan City",
+  "name": "Kathmandu Metropolitan City"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:18:57.229203",
+  "municipality_name": "Kageshwori Manohara Municipality",
+  "name": "Kageshwori Manohara Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:19:10.037668",
+  "municipality_name": "Kirtipur Municipality",
+  "name": "Kirtipur Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:19:22.579615",
+  "municipality_name": "Gokarneshwor Municipality",
+  "name": "Gokarneshwor Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:19:35.905500",
+  "municipality_name": "Chandragiri Municipality",
+  "name": "Chandragiri Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:19:52.367267",
+  "municipality_name": "Tokha Municipality",
+  "name": "Tokha Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:20:04.812515",
+  "municipality_name": "Tarakeswar Municipality",
+  "name": "Tarakeswar Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:20:15.613523",
+  "municipality_name": "Dakshinkali Municipality",
+  "name": "Dakshinkali Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:20:26.874289",
+  "municipality_name": "Nagarjuna Municipality",
+  "name": "Nagarjuna Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:20:39.449622",
+  "municipality_name": "Budhanilkantha Municipality",
+  "name": "Budhanilkantha Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:20:53.338467",
+  "municipality_name": "Shankharapur Municipality",
+  "name": "Shankharapur Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Bhaktapur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:21:12.105853",
+  "municipality_name": "Changunarayan Municipality",
+  "name": "Changunarayan Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Bhaktapur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:21:25.069473",
+  "municipality_name": "Bhaktapur Municipality",
+  "name": "Bhaktapur Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Bhaktapur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:21:40.221712",
+  "municipality_name": "Madhyapur Thimi Municipality",
+  "name": "Madhyapur Thimi Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Bhaktapur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:21:52.064147",
+  "municipality_name": "Suryabinayak Municipality",
+  "name": "Suryabinayak Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:22:09.572735",
+  "municipality_name": "Lalitpur Metropolitan Municipality",
+  "name": "Lalitpur Metropolitan Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:23:19.941552",
+  "municipality_name": "Godavari Municipality",
+  "name": "Godavari Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:23:36.996623",
+  "municipality_name": "Mahalaxmi Municipality",
+  "name": "Mahalaxmi Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:23:51.273079",
+  "municipality_name": "Konjyosom Rural Municipality",
+  "name": "Konjyosom Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:24:04.184698",
+  "municipality_name": "Bagmati Rural Municipality",
+  "name": "Bagmati Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:24:16.224671",
+  "municipality_name": "Mahankal Rural Municipality",
+  "name": "Mahankal Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:24:37.095246",
+  "municipality_name": "Bharatpur Metropolitan City",
+  "name": "Bharatpur Metropolitan City"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:24:49.644139",
+  "municipality_name": "Kalika Municipality",
+  "name": "Kalika Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:25:00.316027",
+  "municipality_name": "Khairhani Municipality",
+  "name": "Khairhani Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:25:10.259898",
+  "municipality_name": "Madi Municipality",
+  "name": "Madi Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:25:20.193998",
+  "municipality_name": "Ratnanagar Municipality",
+  "name": "Ratnanagar Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:25:30.352708",
+  "municipality_name": "Rapti Municipality",
+  "name": "Rapti Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Chitwan",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:25:42.017445",
+  "municipality_name": "Ichchakamana Rural Municipality",
+  "name": "Ichchakamana Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kaski",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:26:21.729584",
+  "municipality_name": "Pokhara Metropolitan City",
+  "name": "Pokhara Metropolitan City"
+ },
+ {
+  "active": 1,
+  "district": "Kaski",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:26:32.317893",
+  "municipality_name": "Annapurna Rural Municipality",
+  "name": "Annapurna Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kaski",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:26:42.670025",
+  "municipality_name": "Machhapuchhre Rural Municipality",
+  "name": "Machhapuchhre Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kaski",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:26:53.356519",
+  "municipality_name": "Madi Rural Municipality",
+  "name": "Madi Rural Municipality"
+ },
+ {
+  "active": 1,
+  "district": "Kaski",
+  "docstatus": 0,
+  "doctype": "Municipality",
+  "modified": "2025-01-24 13:27:03.156199",
+  "municipality_name": "Rupa Rural Municipality",
+  "name": "Rupa Rural Municipality"
+ }
+]

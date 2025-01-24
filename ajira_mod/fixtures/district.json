@@ -1,0 +1,42 @@
+[
+ {
+  "active": 1,
+  "district_name": "Kathmandu",
+  "docstatus": 0,
+  "doctype": "District",
+  "modified": "2025-01-24 12:39:02.069274",
+  "name": "Kathmandu"
+ },
+ {
+  "active": 1,
+  "district_name": "Lalitpur",
+  "docstatus": 0,
+  "doctype": "District",
+  "modified": "2025-01-24 12:39:21.374094",
+  "name": "Lalitpur"
+ },
+ {
+  "active": 1,
+  "district_name": "Bhaktapur",
+  "docstatus": 0,
+  "doctype": "District",
+  "modified": "2025-01-24 12:40:51.193160",
+  "name": "Bhaktapur"
+ },
+ {
+  "active": 1,
+  "district_name": "Chitwan",
+  "docstatus": 0,
+  "doctype": "District",
+  "modified": "2025-01-24 12:42:27.791868",
+  "name": "Chitwan"
+ },
+ {
+  "active": 1,
+  "district_name": "Kaski",
+  "docstatus": 0,
+  "doctype": "District",
+  "modified": "2025-01-24 12:42:50.433912",
+  "name": "Kaski"
+ }
+]
