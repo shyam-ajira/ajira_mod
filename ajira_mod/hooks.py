@@ -252,11 +252,11 @@ override_doctype_dashboards = {
 }
 
 
-fixtures = [
-    {
-        "doctype": "District"
-    },
-    {
-        "doctype": "Municipality"
-    }
-]
+# fixtures = [
+#     {
+#         "doctype": "District"
+#     },
+#     {
+#         "doctype": "Municipality"
+#     }
+# ]
