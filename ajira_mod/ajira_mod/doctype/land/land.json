@@ -386,6 +386,13 @@
   "module": "Ajira Mod",
   "name": "Land",
   "owner": "Administrator",
+  "links": [
+    {
+       "link_doctype": "Site Visit",
+       "link_fieldname": "district",
+       "group": "Site Visit"
+    }
+ ],
   "permissions": [
     {
       "create": 1,

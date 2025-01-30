@@ -1,0 +1,381 @@
+{
+  "doctype": "DocType",
+  "name": "Char Killa",
+  "module": "Consulting",
+  "engine": "InnoDB",
+  "field_order": [
+    "direction",
+    "col_break_1",
+    "landscape_type",
+    "col_break_2",
+    "kitta_no",
+    "house_owner_details",
+    "col_break_3",
+    "house_owner_name",
+    "col_break_4",
+    "house_owner_citizen",
+    "col_break_5",
+    "house_setback",
+    "col_break_6",
+    "house_owner_citizen_upload",
+    "road_details",
+    "road_name",
+    "col_break_7",
+    "proposed_gld_road_width",
+    "col_break_8",
+    "minimum_setback",
+    "col_break_9",
+    "row_from_centerline",
+    "col_break_10",
+    "road_width",
+    "empty_land_details",
+    "empty_land_owner_name",
+    "col_break_11",
+    "empty_land_owner_citizen",
+    "col_break_12",
+    "empty_land_owner_citizen_upload",
+    "col_break_13",
+    "river_details",
+    "river_name",
+    "col_break_14",
+    "river_minimum_setback",
+    "col_break_15",
+    "rajkulo_details",
+    "rajkulo_name",
+    "col_break_16",
+    "rajkulo_width",
+    "col_break_17",
+    "rajkulo_minimum_setback",
+    "col_break_18",
+    "rajkulo_centerline",
+    "public_property_details",
+    "public_property_type",
+    "col_break_19",
+    "public_property_owner_name",
+    "col_break_20",
+    "public_minimum_setback",
+    "site_measurement_section",
+    "upload_site_measurement",
+    "site_visit_not_required_by_client",
+    "client_testament_section",
+    "site_visit_not_required_by_client_signed_document"
+  ],
+  "fields": [
+    {
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "label": "Direction",
+      "options": "North\nEast\nWest\nSouth\nNorth-East\nNorth-West\nSouth-East\nSouth-West"
+    },
+    {
+      "fieldname": "col_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "landscape_type",
+      "fieldtype": "Select",
+      "label": "Landscape Type",
+      "options": "Road\nHouse\nEmpty Land\nRiver\nRaj-kulo\nPublic Property"
+    },
+    {
+      "fieldname": "col_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "kitta_no",
+      "fieldtype": "Data",
+      "label": "Kitta No."
+    },
+    {
+      "fieldname": "house_owner_details",
+      "fieldtype": "Section Break",
+      "label": "Owner Details",
+      "depends_on": "eval:doc.landscape_type == 'House'"
+    },
+    {
+      "fieldname": "col_break_3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "house_owner_name",
+      "fieldtype": "Data",
+      "label": "Owner Name",
+      "depends_on": "eval:doc.landscape_type == 'House'"
+    },
+    {
+      "fieldname": "col_break_4",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "house_owner_citizen",
+      "fieldtype": "Int",
+      "label": "Citizenship No.",
+      "depends_on": "eval:doc.landscape_type == 'House'"
+    },
+    {
+      "fieldname": "col_break_5",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "house_setback",
+      "fieldtype": "Float",
+      "label": "House Setback",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'House'"
+    },
+    {
+      "fieldname": "col_break_6",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "house_owner_citizen_upload",
+      "fieldtype": "Attach",
+      "label": "Citizenship Upload",
+      "depends_on": "eval:doc.landscape_type == 'House'"
+    },
+    {
+      "fieldname": "road_details",
+      "fieldtype": "Section Break",
+      "label": "Road Details",
+      "depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "road_name",
+      "fieldtype": "Data",
+      "label": "Road Name",
+      "depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "col_break_7",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "proposed_gld_road_width",
+      "fieldtype": "Float",
+      "label": "Proposed/GLD Road Width",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "col_break_8",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "minimum_setback",
+      "fieldtype": "Float",
+      "label": "Minimum Setback",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "col_break_9",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "row_from_centerline",
+      "fieldtype": "Float",
+      "label": "ROW from Centerline",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "col_break_10",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "road_width",
+      "fieldtype": "Float",
+      "label": "Road Width",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Road'",
+      "mandatory_depends_on": "eval:doc.landscape_type == 'Road'"
+    },
+    {
+      "fieldname": "empty_land_details",
+      "fieldtype": "Section Break",
+      "label": "Land Details",
+      "depends_on": "eval:doc.landscape_type == 'Empty Land'"
+    },
+    {
+      "fieldname": "empty_land_owner_name",
+      "fieldtype": "Data",
+      "label": "Owner Name",
+      "depends_on": "eval:doc.landscape_type == 'Empty Land'"
+    },
+    {
+      "fieldname": "col_break_11",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "empty_land_owner_citizen",
+      "fieldtype": "Int",
+      "label": "Citizenship No.",
+      "depends_on": "eval:doc.landscape_type == 'Empty Land'"
+    },
+    {
+      "fieldname": "col_break_12",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "empty_land_owner_citizen_upload",
+      "fieldtype": "Attach",
+      "label": "Citizenship Upload",
+      "depends_on": "eval:doc.landscape_type == 'Empty Land'"
+    },
+    {
+      "fieldname": "col_break_13",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "river_details",
+      "fieldtype": "Section Break",
+      "label": "River Details",
+      "depends_on": "eval:doc.landscape_type == 'River'"
+    },
+    {
+      "fieldname": "river_name",
+      "fieldtype": "Data",
+      "label": "River Name",
+      "depends_on": "eval:doc.landscape_type == 'River'"
+    },
+    {
+      "fieldname": "col_break_14",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "river_minimum_setback",
+      "fieldtype": "Float",
+      "label": "Minimum Setback",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'River'"
+    },
+    {
+      "fieldname": "col_break_15",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "rajkulo_details",
+      "fieldtype": "Section Break",
+      "label": "Raj-Kulo Details",
+      "depends_on": "eval:doc.landscape_type == 'Raj-kulo'"
+    },
+    {
+      "fieldname": "rajkulo_name",
+      "fieldtype": "Data",
+      "label": "Raj Kulo Name",
+      "depends_on": "eval:doc.landscape_type == 'Raj-kulo'"
+    },
+    {
+      "fieldname": "col_break_16",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "rajkulo_width",
+      "fieldtype": "Float",
+      "label": "Raj Kulo Width",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Raj-kulo'"
+    },
+    {
+      "fieldname": "col_break_17",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "rajkulo_minimum_setback",
+      "fieldtype": "Float",
+      "label": "Minimum Setback",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Raj-kulo'"
+    },
+    {
+      "fieldname": "col_break_18",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "rajkulo_centerline",
+      "fieldtype": "Float",
+      "label": "ROW from Centerline",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Raj-kulo'"
+    },
+    {
+      "fieldname": "public_property_details",
+      "fieldtype": "Section Break",
+      "label": "Public Property Details",
+      "depends_on": "eval:doc.landscape_type == 'Public Property'"
+    },
+    {
+      "fieldname": "public_property_type",
+      "fieldtype": "Select",
+      "label": "Property Type",
+      "options": "Goverment Own Land\nBulding\nEmpty Land"
+    },
+    {
+      "fieldname": "col_break_19",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "public_property_owner_name",
+      "fieldtype": "Data",
+      "label": "Owner Name",
+      "depends_on": "eval:doc.landscape_type == 'Public Property'"
+    },
+    {
+      "fieldname": "col_break_20",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "public_minimum_setback",
+      "fieldtype": "Float",
+      "label": "Minimum Setback",
+      "placeholder": "In Meter",
+      "depends_on": "eval:doc.landscape_type == 'Public Property'"
+    },
+    {
+      "fieldname": "site_measurement_section",
+      "fieldtype": "Section Break",
+      "label": "Site Measurement"
+    },
+    {
+      "fieldname": "upload_site_measurement",
+      "fieldtype": "Attach Image",
+      "label": "Upload Site Measurement"
+    },
+    {
+      "default": "0",
+      "fieldname": "site_visit_not_required_by_client",
+      "fieldtype": "Check",
+      "label": "Site Visit Not Required (Measurements provided by Client)"
+    },
+    {
+      "fieldname": "client_testament_section",
+      "fieldtype": "Section Break",
+      "label": "Client Testament"
+    },
+    {
+      "fieldname": "site_visit_not_required_by_client_signed_document",
+      "fieldtype": "Attach Image",
+      "label": "Upload Client Testament",
+      "depends_on": "eval:doc.site_visit_not_required_by_client == 1"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "create": 1,
+      "read": 1,
+      "write": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "export": 1,
+      "report": 1,
+      "share": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "index_web_pages_for_search": 1,
+  "modified": "2025-01-29 12:11:45",
+  "owner": "Administrator"
+}
